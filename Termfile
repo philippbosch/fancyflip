@@ -1,0 +1,27 @@
+# Fancy Flip
+
+APP_NAME = "fancyflip"
+
+setup do
+  run "bundle install"
+end
+
+before do
+  run "cd ~/Apps/#{APP_NAME}"
+end
+
+tab "#{APP_NAME}" do
+  pane do
+    run "tail -f ~/Library/Logs/Pow/apps/#{APP_NAME}.log"
+    
+    pane do
+      run "foreman start"
+    end
+    
+    pane do
+      run "mate ."
+      run "open http://#{APP_NAME}.dev/"
+      run "clear && ls -alG"
+    end
+  end
+end
