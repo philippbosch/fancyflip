@@ -19,7 +19,12 @@
     
     <body>
         <div id="main" role="main">
-            <h1>{{ app_title }}</h1>
+            <div class="container" onclick="$(this).addClass('flip');">
+                <div class="card">
+                    <div class="front face">Hello</div>
+                    <div class="back face">World</div>
+                </div>
+            </div>
         </div>
         
         {% if debug %}<a href="#" onclick="location.reload(); return false;" id="reloader">reload</a>{% endif %}

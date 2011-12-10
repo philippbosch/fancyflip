@@ -12,5 +12,6 @@
     
     #{$less-grid-element} {
         @include grid(3);
+        margin: 0;
     }
 }
