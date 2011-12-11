@@ -20,16 +20,6 @@ small {
     @extend .small;
 }
 
-body {
-    background: #000;
-    color: rgb(60, 60, 60);
-    // Stops Mobile Safari from auto-adjusting font-sizes
-    -webkit-text-size-adjust: 100%;
-    height: 100%;
-    overflow: hidden;
-    font-family: "Helvetica Neue", serif;
-    -webkit-user-select: none;
-    -moz-user-select: none;
     
     @if $debug {
         &:before, &:after, #reloader {

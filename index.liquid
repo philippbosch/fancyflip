@@ -18,22 +18,14 @@
     </head>
     
     <body>
-        <div id="main" role="main">
-            <div class="container" onclick="$(this).addClass('flip');">
-                <div class="card">
-                    <div class="front face">Hello</div>
-                    <div class="back face">World</div>
-                </div>
+        <div class="container">
+            <div class="card flippable">
+                <div class="front face">Hello</div>
+                <div class="back face">World</div>
             </div>
         </div>
         
-        {% if debug %}<a href="#" onclick="location.reload(); return false;" id="reloader">reload</a>{% endif %}
         <script src="javascripts/lib/zepto.min.js"></script>
-        <script src="javascripts/lib/add2home.min.js"></script>
         <script src="javascripts/app.js"></script>
-        {% if debug %}
-        <!--<script src="http://debug.phonegap.com/target/target-script-min.js#{{ app_name }}"></script>-->
-        <!-- Remote Web Inspector is at http://debug.phonegap.com/client/#{{ app_name }} -->
-        {% endif %}
     </body>
 </html>
