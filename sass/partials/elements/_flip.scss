@@ -22,8 +22,12 @@
         position: absolute;
         @include backface-visibility(hidden);
         text-align: center;
-        line-height: 72px;
-        font-size: 36px;
+        line-height: 150px;
+        font-size: 72px;
+        font-weight: bold;
+        letter-spacing: -2px;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
         
         &.front {
             background: #900;
@@ -43,6 +47,7 @@
         -webkit-animation-iteration-count: 1;
         -webkit-animation-direction: alternate;
         -webkit-animation-fill-mode: forwards;
+        -webkit-animation-timing-function: ease-in-out;
     }
     
     &.flip-backward {
@@ -51,42 +56,21 @@
         -webkit-animation-iteration-count: 1;
         -webkit-animation-direction: alternate;
         -webkit-animation-fill-mode: forwards;
+        -webkit-animation-timing-function: ease-in-out;
     }
 }
 
 @-webkit-keyframes flip-forward {
-    0% {
-        @include transform(rotateY(0deg) scale(1));
-    }
-    
-    25% {
-        @include transform(rotateY(0deg) scale(.75));
-    }
-    
-    75% {
-        @include transform(rotateY(180deg) scale(.75));
-    }
-    
-    100% {
-        @include transform(rotateY(180deg) scale(1));
-    }
+    0%   { @include transform(rotateY(0deg)   scale(1));   }
+    25%  { @include transform(rotateY(0deg)   scale(.75)); }
+    75%  { @include transform(rotateY(180deg) scale(.75)); }
+    100% { @include transform(rotateY(180deg) scale(1));   }
 }
 
 @-webkit-keyframes flip-backward {
-    100% {
-        @include transform(rotateY(0deg) scale(1));
-    }
-    
-    75% {
-        @include transform(rotateY(0deg) scale(.75));
-    }
-    
-    25% {
-        @include transform(rotateY(180deg) scale(.75));
-    }
-    
-    0% {
-        @include transform(rotateY(180deg) scale(1));
-    }
+    0%   { @include transform(rotateY(180deg) scale(1));   }
+    25%  { @include transform(rotateY(180deg) scale(.75)); }
+    75%  { @include transform(rotateY(0deg)   scale(.75)); }
+    100% { @include transform(rotateY(0deg)   scale(1));   }
 }
 
