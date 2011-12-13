@@ -41,36 +41,11 @@
         }
     }
     
-    &.flip-forward {
-        -webkit-animation-name: flip-forward;
-        -webkit-animation-duration: 2s;
-        -webkit-animation-iteration-count: 1;
-        -webkit-animation-direction: alternate;
-        -webkit-animation-fill-mode: forwards;
-        -webkit-animation-timing-function: ease-in-out;
+    .zoom-out {
+        @include scale(.75);
     }
     
-    &.flip-backward {
-        -webkit-animation-name: flip-backward;
-        -webkit-animation-duration: 2s;
-        -webkit-animation-iteration-count: 1;
-        -webkit-animation-direction: alternate;
-        -webkit-animation-fill-mode: forwards;
-        -webkit-animation-timing-function: ease-in-out;
+    .green {
+        background-color: green;
     }
 }
-
-@-webkit-keyframes flip-forward {
-    0%   { @include transform(rotateY(0deg)   scale(1));   }
-    25%  { @include transform(rotateY(0deg)   scale(.75)); }
-    75%  { @include transform(rotateY(180deg) scale(.75)); }
-    100% { @include transform(rotateY(180deg) scale(1));   }
-}
-
-@-webkit-keyframes flip-backward {
-    0%   { @include transform(rotateY(180deg) scale(1));   }
-    25%  { @include transform(rotateY(180deg) scale(.75)); }
-    75%  { @include transform(rotateY(0deg)   scale(.75)); }
-    100% { @include transform(rotateY(0deg)   scale(1));   }
-}
-
